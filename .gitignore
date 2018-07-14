@@ -4,7 +4,10 @@ symfony/public/bundles/
 symfony/var/
 symfony/vendor/
 ###< symfony/framework-bundle ###
-
+symfony/.env
+symfony/public/bundles/
+symfony/var/
+symfony/vendor/
 ###> symfony/webpack-encore-pack ###
 symfony/node_modules/
 symfony/public/build/
@@ -21,9 +24,10 @@ symfony/phpunit.xml
 symfony/.web-server-pid
 ###< symfony/web-server-bundle ###
 
-##> idea config
+##> idea config ###
 symfony/.idea/
 .idea/
 
 ###> logs ###
-logs
+/logs
+/symfony
