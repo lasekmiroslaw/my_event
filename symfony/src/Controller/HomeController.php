@@ -16,6 +16,8 @@ class HomeController extends Controller
 
         echo "Hello $a";
 
+
+        $b = 5;
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
         ]);

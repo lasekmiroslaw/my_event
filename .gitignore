@@ -26,7 +26,7 @@ symfony/.web-server-pid
 
 ##> idea config ###
 symfony/.idea/
-.idea/
+/.idea
 
 ###> logs ###
 /logs
