@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+{% block title %}Sign in!{% endblock %}
+{% block body %}
+    <div class="mt-5 col-md-4 offset-md-3">
+        {#{% if error %}#}
+            {#<div class="text-danger"></div>#}
+        {#{% endif %}#}
+
+        <form action="{{ path('security_login') }}" method="post">
+
+            {#{% if csrf_token %}#}
+                {#<input type="hidden" name="csrf_token" value="{{ csrf_token }}"/>#}
+            {#{% endif %}#}
+
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input class="form-control" type="text" id="username" name="_username" value=""
+                       required="required" autocomplete="username"/>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input class="form-control" type="password" id="password" name="_password" required="required"
+                       autocomplete="current-password"/>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="remember_me" name="_remember_me" value="on"/>
+                <label for="remember_me">Remember me</label>
+            </div>
+
+
+            <input class="btn btn-primary" type="submit" id="_submit" name="_submit"
+                   value="sign in"/>
+        </form>
+
+        {#<a href="{{ path('hwi_oauth_service_redirect', {'service': 'googleplus'}) }}">#}
+            {#<img src="{{ asset('img/google_signin.png') }}" alt="google signin">#}
+        {#</a>#}
+
+        {#<a href="{{ path('hwi_oauth_service_redirect', {'service': 'github'}) }}">#}
+            {#<img width="191" height="46" src="{{ asset('img/github_signin.png') }}" alt="google signin">#}
+        {#</a>#}
+    </div>
+{% endblock %}
