@@ -1,0 +1,4 @@
+172.20.0.1 - - [14/Jul/2018:12:22:17 +0000] "GET / HTTP/1.1" 404 12869 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36"
+172.20.0.1 - - [14/Jul/2018:12:22:19 +0000] "GET /_wdt/9c42bd HTTP/1.1" 200 3811 "http://symfony.localhost/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36"
+172.20.0.1 - - [14/Jul/2018:12:22:21 +0000] "GET /_profiler/9c42bd?panel=config HTTP/1.1" 200 29492 "http://symfony.localhost/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36"
+172.20.0.1 - - [14/Jul/2018:12:22:38 +0000] "GET /_profiler/phpinfo HTTP/1.1" 200 27932 "http://symfony.localhost/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36"

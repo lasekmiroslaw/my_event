@@ -1,0 +1,25 @@
+###> symfony/framework-bundle ###
+symfony/.env
+symfony/public/bundles/
+symfony/var/
+symfony/vendor/
+###< symfony/framework-bundle ###
+
+###> symfony/webpack-encore-pack ###
+symfony/node_modules/
+symfony/public/build/
+symfony/npm-debug.log
+symfony/yarn-error.log
+###< symfony/webpack-encore-pack ###
+
+###> symfony/phpunit-bridge ###
+symfony/.phpunit
+symfony/phpunit.xml
+###< symfony/phpunit-bridge ###
+
+###> symfony/web-server-bundle ###
+symfony/.web-server-pid
+###< symfony/web-server-bundle ###
+
+##> idea config
+symfony/.idea/
