@@ -23,3 +23,7 @@ symfony/.web-server-pid
 
 ##> idea config
 symfony/.idea/
+.idea/
+
+###> logs ###
+logs
