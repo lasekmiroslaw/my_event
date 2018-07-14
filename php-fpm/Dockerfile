@@ -1,6 +1,8 @@
-FROM alpine:3.6
+FROM alpine:3.8
 
 LABEL maintainer="Vincent Composieux <vincent.composieux@gmail.com>"
+
+RUN echo "@php https://php.codecasts.rocks/v3.7/php-7.2" >> /etc/apk/repositories
 
 RUN apk add --update \
     php7-fpm \
