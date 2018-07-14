@@ -11,8 +11,9 @@ class User
 {
     /**
      * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
+     * @ORM\@Column(type="uuid_binary_ordered_time", unique=true)
+     * @ORM\@GeneratedValue(strategy="CUSTOM")
+     * @ORM\@CustomIdGenerator(class="Ramsey\Uuid\Doctrine\UuidOrderedTimeGenerator")
      */
     private $id;
 
