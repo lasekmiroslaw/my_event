@@ -18,8 +18,6 @@ class SecurityController extends AbstractController
      */
     public function login(Request $request, AuthenticationUtils $authenticationUtils)
     {
-        $doc = $this->getDoctrine()->getManager()->getRepository(User::class)->findAll();
-
         if ($this->isGranted('ROLE_USER')) {
             return $this->redirectToRoute('home');
         }

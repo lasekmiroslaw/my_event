@@ -87,6 +87,7 @@ class User implements UserInterface, \Serializable
     public function __construct()
     {
         $this->isActive = true;
+        $this->joinedAt = new \DateTime();
     }
 
     public function getId()
@@ -274,6 +275,7 @@ class User implements UserInterface, \Serializable
             $this->id,
             $this->username,
             $this->password,
+            $this->email
         ));
     }
 
@@ -292,6 +294,7 @@ class User implements UserInterface, \Serializable
             $this->id,
             $this->username,
             $this->password,
-            ) = unserialize($serialized, array('allowed_classes' => false));
+            $this->email
+            ) = unserialize($serialized);
     }
 }

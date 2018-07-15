@@ -2,12 +2,12 @@ security:
     encoders:
         App\Entity\User:
             algorithm: bcrypt
-
+            cost: 12
     providers:
         our_db_provider:
             entity:
                 class: App\Entity\User
-                property: email
+                property: username
                 # if you're using multiple entity managers
                 # manager_name: customer
 
