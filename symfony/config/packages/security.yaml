@@ -22,8 +22,11 @@ security:
             anonymous: ~
             provider: our_db_provider
             form_login:
-                login_path: /login
+                login_path: login
                 check_path: login
+                always_use_default_target_path: true
+                default_target_path: /
+
     access_control:
          - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
          - { path: ^/, roles: ROLE_USER }

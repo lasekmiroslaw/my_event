@@ -2,19 +2,15 @@
 {% block title %}Sign in!{% endblock %}
 {% block body %}
     <div class="mt-5 col-md-4 offset-md-3">
-        {#{% if error %}#}
-            {#<div class="text-danger"></div>#}
-        {#{% endif %}#}
+        {% if error %}
+            <div class="red-text">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
 
-        <form action="{{ path('security_login') }}" method="post">
-
-            {#{% if csrf_token %}#}
-                {#<input type="hidden" name="csrf_token" value="{{ csrf_token }}"/>#}
-            {#{% endif %}#}
+        <form action="{{ path('login') }}" method="post">
 
             <div class="form-group">
                 <label for="username">Username</label>
-                <input class="form-control" type="text" id="username" name="_username" value=""
+                <input class="form-control" type="text" id="username" name="_username" value="{{ last_email }}"
                        required="required" autocomplete="username"/>
             </div>
 
@@ -23,12 +19,6 @@
                 <input class="form-control" type="password" id="password" name="_password" required="required"
                        autocomplete="current-password"/>
             </div>
-
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="remember_me" name="_remember_me" value="on"/>
-                <label for="remember_me">Remember me</label>
-            </div>
-
 
             <input class="btn btn-primary" type="submit" id="_submit" name="_submit"
                    value="sign in"/>

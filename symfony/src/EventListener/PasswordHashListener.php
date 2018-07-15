@@ -9,6 +9,10 @@
 namespace App\EventListener;
 
 
+use App\Entity\User;
+use Doctrine\ORM\Event\LifecycleEventArgs;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+
 class PasswordHashListener
 {
     private $passwordEncoder;
@@ -25,6 +29,7 @@ class PasswordHashListener
         if (!$entity instanceof User) {
             return;
         }
+
         $password = $this->passwordEncoder->encodePassword($entity, $entity->getPlainPassword());
         $entity->setPassword($password);
     }

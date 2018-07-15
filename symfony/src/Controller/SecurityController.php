@@ -2,18 +2,34 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
-class SecurityController extends Controller
+class SecurityController extends AbstractController
 {
     /**
-     * @Route("/login", name="security_login")
+     * @Route("/login", name="login")
+     * @param Request $request
+     * @param AuthenticationUtils $authenticationUtils
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      */
-    public function login()
+    public function login(Request $request, AuthenticationUtils $authenticationUtils)
     {
-        return $this->render('security/login.html.twig', [
-            'controller_name' => 'SecurityController',
-        ]);
+        $doc = $this->getDoctrine()->getManager()->getRepository(User::class)->findAll();
+
+        if ($this->isGranted('ROLE_USER')) {
+            return $this->redirectToRoute('home');
+        }
+
+        $error = $authenticationUtils->getLastAuthenticationError();
+        $lastEmail = $authenticationUtils->getLastUsername();
+
+        return $this->render('security/login.html.twig', array(
+            'last_email' => $lastEmail,
+            'error' => $error,
+        ));
     }
 }
