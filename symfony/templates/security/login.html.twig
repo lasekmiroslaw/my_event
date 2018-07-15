@@ -1,26 +1,30 @@
 {% extends 'base.html.twig' %}
 {% block title %}Sign in!{% endblock %}
 {% block body %}
-    <div class="mt-5 col-md-4 offset-md-3">
-        {% if error %}
-            <div class="red-text">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-        {% endif %}
+    <div class="row">
+        <form class="col s12" action="{{ path('login') }}" method="post">
+            {% if error %}
+                <div class="red-text valign-wrapper">
+                    <i class="material-icons">error</i>
+                    <span class="valign">{{ error.messageKey|trans(error.messageData, 'security') }}</span>
+                </div>
+            {% endif %}
 
-        <form action="{{ path('login') }}" method="post">
-
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input class="form-control" type="text" id="username" name="_username" value="{{ last_email }}"
+            <div class="input-field col s12">
+                <i class="large material-icons prefix">account_circle</i>
+                <input class="validate" type="text" id="username" name="_username" value="{{ last_email }}"
                        required="required" autocomplete="username"/>
+                <label for="username">Username</label>
             </div>
 
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input class="form-control" type="password" id="password" name="_password" required="required"
+            <div class="input-field col s12">
+                <i class="material-icons prefix">lock</i>
+                <input class="validate" type="password" id="password" name="_password" required="required"
                        autocomplete="current-password"/>
+                <label for="password">Password</label>
             </div>
 
-            <input class="btn btn-primary" type="submit" id="_submit" name="_submit"
+            <input class="btn" type="submit" id="_submit" name="_submit"
                    value="sign in"/>
         </form>
 

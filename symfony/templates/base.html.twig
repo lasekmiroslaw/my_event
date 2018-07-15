@@ -5,11 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{% block title %}Welcome!{% endblock %}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     {% block stylesheets %}{% endblock %}
 </head>
 <body>
-{% block body %}{% endblock %}
-
+<div class="container">
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo"><i class="large material-icons yellow-text">gradet</i>MyEvent</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="">Groups</a></li>
+                <li><a href="">Settings</a></li>
+                <li><a href="">Sign out</a></li>
+            </ul>
+        </div>
+    </nav>
+    {% block body %}{% endblock %}
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 {% block javascripts %}{% endblock %}
 </body>
