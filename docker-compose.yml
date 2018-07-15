@@ -13,12 +13,18 @@ services:
             MYSQL_PASSWORD: "symfony"
             MYSQL_ALLOW_EMPTY_PASSWORD: 1
 
-    myadmin:
-         image: phpmyadmin/phpmyadmin
-         ports:
-             - "8080:80"
-         depends_on:
-             - db
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        environment:
+            PMA_ARBITRARY: 1
+            MYSQL_USER: symfony
+            MYSQL_PASSWORD: symfony
+            MYSQL_ROOT_PASSWORD: root
+        ports:
+            - "8080:80"
+        links:
+            # for mysql container
+            - "db:db"
 
     php:
         build: ./php-fpm
