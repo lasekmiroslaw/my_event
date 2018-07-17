@@ -1,0 +1,17 @@
+knpu_oauth2_client:
+    clients:
+        # will create service: "knpu.oauth2.client.github"
+        # an instance of: KnpU\OAuth2ClientBundle\Client\Provider\GithubClient
+        # composer require league/oauth2-github
+        github:
+            # must be "github" - it activates that type!
+            type: github
+            # add and configure client_id and client_secret in parameters.yml
+            client_id: %github_client_id%
+            client_secret: %github_client_secret%
+            # a route name you'll create
+            redirect_route: connect_github_check
+            redirect_params: {}
+
+            # whether to check OAuth2 "state": defaults to true
+            # use_state: true

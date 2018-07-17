@@ -80,8 +80,26 @@
     "fig/link-util": {
         "version": "1.0.0"
     },
+    "guzzlehttp/guzzle": {
+        "version": "6.3.3"
+    },
+    "guzzlehttp/promises": {
+        "version": "v1.3.1"
+    },
+    "guzzlehttp/psr7": {
+        "version": "1.4.2"
+    },
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
+    },
+    "knpuniversity/oauth2-client-bundle": {
+        "version": "v1.20.0"
+    },
+    "league/oauth2-client": {
+        "version": "2.3.0"
+    },
+    "league/oauth2-github": {
+        "version": "2.0.0"
     },
     "monolog/monolog": {
         "version": "1.23.0"
@@ -109,6 +127,9 @@
     },
     "psr/container": {
         "version": "1.0.0"
+    },
+    "psr/http-message": {
+        "version": "1.0.1"
     },
     "psr/link": {
         "version": "1.0.0"
