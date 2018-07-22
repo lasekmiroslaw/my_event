@@ -26,6 +26,10 @@ security:
                 always_use_default_target_path: true
                 default_target_path: /
 
+            guard:
+                authenticators:
+                    - App\Security\GithubAuthenticator
+
             logout:
                 path:   /logout
                 target: login
